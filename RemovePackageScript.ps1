@@ -9,7 +9,7 @@ While($Repeat)
     {
         y{
             $Choice = Get-AppxPackage |Select PackageFullName | Select-String $Package
-            $Choice = $choice -replace "@{PackageFullName=", "" -replace "}", "" 
+            $Choice = $Choice -replace "@{PackageFullName=", "" -replace "}", "" 
             Remove-AppxPackage $Choice
 
             Write-Host "$Package has been removed!"
