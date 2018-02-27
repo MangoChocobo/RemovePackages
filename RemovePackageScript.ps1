@@ -8,7 +8,7 @@ While($Repeat)
     switch($ConfirmChoice)
     {
         y{
-            $Choice = Get-AppxPackage |Select PackageFullName | Select-String $Package
+            $Choice = Get-AppxPackage | Select PackageFullName | Select-String $Package
             $Choice = $Choice -replace "@{PackageFullName=", "" -replace "}", "" 
             Remove-AppxPackage $Choice
 
